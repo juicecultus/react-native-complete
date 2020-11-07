@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
   View,
+  StyleSheet,
   TouchableWithoutFeedback,
-  Button,
   Modal,
+  Button,
   FlatList,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import Text from './Text';
 import defaultStyles from '../config/styles';
-import AppText from './AppText';
 import PickerItem from './PickerItem';
+import Screen from './Screen';
 
 export default function AppPicker({
   icon,
@@ -39,10 +39,11 @@ export default function AppPicker({
             />
           )}
           {selectedItem ? (
-            <AppText style={styles.text}>{selectedItem.label}</AppText>
+            <Text style={styles.text}>{selectedItem.label}</Text>
           ) : (
-            <AppText style={styles.placeholder}>{placeholder}</AppText>
+            <Text style={styles.placeholder}>{placeholder}</Text>
           )}
+
           <MaterialCommunityIcons
             name='chevron-down'
             size={20}
@@ -51,7 +52,7 @@ export default function AppPicker({
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType='slide'>
-        <SafeAreaView>
+        <Screen>
           <Button title='Close' onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
@@ -68,7 +69,7 @@ export default function AppPicker({
               />
             )}
           />
-        </SafeAreaView>
+        </Screen>
       </Modal>
     </>
   );
@@ -81,7 +82,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 15,
     marginVertical: 10,
-    alignItems: 'center',
   },
   icon: {
     marginRight: 10,
