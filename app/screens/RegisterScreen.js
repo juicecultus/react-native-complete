@@ -34,7 +34,6 @@ export default function RegisterScreen() {
       if (result.data) setError(result.data.error);
       else {
         setError('An unexpected error occurred.');
-        console.log(result);
       }
       return;
     }

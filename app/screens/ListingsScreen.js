@@ -40,6 +40,7 @@ export default function ListingsScreen({ navigation }) {
               thumbnailUrl={item.images[0].thumbnailUrl}
             />
           )}
+          showsVerticalScrollIndicator={false}
         />
       </Screen>
     </>
