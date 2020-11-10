@@ -10,14 +10,9 @@ import AuthNavigator from './app/navigation/AuthNavigator';
 import { navigationRef } from './app/navigation/rootNavigation';
 import AuthContext from './app/auth/context';
 import authStorage from './app/auth/storage';
+import logger from './app/utility/logger';
 
-const Tab = createBottomTabNavigator();
-const TabNavigator = () => (
-  <Tab.Navigator>
-    <Tab.Screen name='Feed' component={FeedNavigator} />
-    <Tab.Screen name='Account' component={AccountNavigator} />
-  </Tab.Navigator>
-);
+logger.start();
 
 export default function App() {
   const [user, setUser] = useState();
