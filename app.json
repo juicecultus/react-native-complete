@@ -2,6 +2,7 @@
   "expo": {
     "name": "DoneTask",
     "slug": "DoneTask",
+    "privacy": "unlisted",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -17,7 +18,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.juicecultus.donetask",
+      "buildNumber": "1.0.0"
     },
     "notification": {
       "iosDisplayInForeground": true
@@ -27,7 +30,9 @@
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "useNextNotificationsApi": true
+      "useNextNotificationsApi": true,
+      "package": "com.juicecultus.donetask",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
